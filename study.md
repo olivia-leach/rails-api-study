@@ -31,7 +31,9 @@ In your own words, define what the responsibilities of the model layer are in
 Rails.
 
 ```md
-<!-- your answer here -->
+Models are Ruby classes that talk to the database, store and validate data, and preform the logic. Allows you to ususally not have to write SQL.
+Sources: http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Controller Responsiblities
@@ -40,7 +42,9 @@ In your own words, define what the responsibilities of the controller layer are
 in Rails.
 
 ```md
-<!-- your answer here -->
+Controllers take input like a URL, call model methods, and pass outputs to the view.
+Sources: http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Router Responsiblities
@@ -48,7 +52,9 @@ in Rails.
 In your own words, define what the router does in Rails.
 
 ```md
-<!-- your answer here -->
+The web server receives the request from the browser and uses routes to find out which controller to use.
+Sources: http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## The Request-Response Cycle in Rails
@@ -57,5 +63,13 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-<!-- your answer here -->
+* The browser makes a request
+* The web server receives the request and uses routes to find out which controller to use.
+* The web server then uses the dispatcher to create a new controller, call the action, and pass the parameters
+* Controllers parse user requests and call the model methods.
+* Models talk to the database, store and validate data, and perform the business logic.
+* Models talk back to the controllers, which pass outputs to the view, and also returns the response body and metadata to the server.
+* The server combines the raw data into a proper HTTP response and sends it to the user.
+* Sources: http://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
